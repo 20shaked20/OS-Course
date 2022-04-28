@@ -17,8 +17,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include <assert.h>
 
-
+/* Colors */
+#define GREEN "\033[0;32m"
+#define PURPLE "\033[0;35m"
+#define WHITE "\033[0m"
 
 /**
  * @brief a demo simulation for the client server.
@@ -30,9 +34,14 @@ void run_demo(){
     system(run_server);
     sleep(2);
 
-    const char *run_client = "gnome-terminal --command=\"./client 127.0.0.1\" ";
-    system(run_client); /*client one */
-    system(run_client); /*client two */
+    const char *run_client_test1 = "gnome-terminal --command=\"./client_test1 127.0.0.1\" ";
+    system(run_client_test1); /*client one */
+
+    const char *run_client_test2 = "gnome-terminal --command=\"./client_test2 127.0.0.1\" ";
+    system(run_client_test2); /*client two */
+
+    const char *run_client_test3 = "gnome-terminal --command=\"./client_test3 127.0.0.1\" ";
+    system(run_client_test3); /*client three */
 }
 
 /**
@@ -43,28 +52,32 @@ void run_demo(){
 int main(){
 
     struct Stack *stacki = Stack();
+    int ans = 1;
     
     char* s1 = (char*)malloc(sizeof(MAXSIZE));
     strcpy(s1,"Shaked\0");
     Push(stacki,s1);
-    if(strcmp(s1,TOP(stacki)) != 0){perror("Not Equal");}
+    if(strcmp(s1,TOP(stacki)) != 0){ans = 0;}
+    assert(ans); /*will be true*/
 
     char* s2 = (char*)malloc(sizeof(MAXSIZE));
     strcpy(s2,"Lior\0");
     Push(stacki,s2);
-    if(strcmp(s2,TOP(stacki)) != 0){perror("Not Equal");}; /* should be Lior */
+    if(strcmp(s2,TOP(stacki)) != 0){ans = 0;}; /* should be Lior */
+    assert(ans);
 
     POP(stacki); /*pops lior */
-    if(strcmp(s1,TOP(stacki)) != 0){perror("Not Equal");} /*is equal to shaked*/
+    if(strcmp(s1,TOP(stacki)) != 0){ans = 0;} /*is equal to shaked*/
+    assert(ans);
 
-    char *s3 = (char*)malloc(sizeof(MAXSIZE));
-    strcpy(s3,"ERROR: Stack is empty, nothing to TOP...\0");
-    POP(stacki); /*empties stack*/
-    if(strcmp(s3,TOP(stacki)) != 0){perror("Not Equal");} /*now stack is empty, should present s3.*/
+    
+    printf(GREEN);
+    printf("%s","Test complete... checking server client\n");
+    printf(WHITE);
 
     free(s1);
     free(s2);
-    free(s3);
+
     run_demo();
     
     return 0;

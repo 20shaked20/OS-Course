@@ -109,7 +109,7 @@ void *StackQueries(void *cli_sock){
 			printf("Server Exit...\n");
 			close(new_fd);
 		}else{
-			printf("ERROR: bad command, enter again...\n");
+			// printf("done...\n");
 		}
 		bzero(cli_msg, MAXSIZE);
     }
