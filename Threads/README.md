@@ -24,9 +24,13 @@ We're adding a photo to explain in details : </br>
 <img width="1429" alt="Screen Shot 2022-04-21 at 12 11 13" src="https://user-images.githubusercontent.com/73894107/164423777-f7762b01-1fcd-4242-8433-54d09b4c9f9e.png">
 
 ### Tests:
-We added a simple tests checking for the stack operations. ``POP``, ``PUSH``, ``TOP``. </br>
-You can see those in the file inside the folder ``Test.cpp``. </br>
-In order to run the tests in the termianl enter: ``make test``, ``./test``. </br>
+We added a simple assert tests checking for the stack operations. ``POP``, ``PUSH``, ``TOP``. </br>
+Also we simulated a 3 client connection to a server. </br>
+The simulated clients are named under ``client_test1``,``client_test2``,``client_test3``. </br>
+You can see the tests in the file ``Test.cpp``. </br>
+In order to compile the tests in the termianl enter: ``make tests`` it will compile everything neccessary for the tests. </br>
+MAKE sure to compile ``make all`` before. </br> 
+in order to run and see the tests enter in the terminal: ``./test``. </br>
 
 
 ## Reading Material:
