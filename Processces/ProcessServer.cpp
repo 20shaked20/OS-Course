@@ -22,17 +22,21 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <sys/wait.h>
-#include <pthread.h> // for threads
 #include <fcntl.h>
-#include <sys/mman.h> //for shared mem
+#include <sys/mman.h> /*for shared mem*/
 
 #include "stack.hpp"
 
-#define PORT "3490"		/*the port users will be connecting to*/
-#define SHARED 10485760 /*10 mb */
-#define BACKLOG 10		/*how many pending connections queue will hold*/
 
-struct Stack *stacki;
+/*Globals*/
+/**
+ * @brief 
+ * @param stacki -> a global stack that we use as the shared memory.
+ * @param file_descriptor -> file descriptor to use as the lock mechanisem.
+ * @param size -> global pointer to point on the top of the stack.
+ * @param lock -> lock to function as the fcntl.
+ */
+struct Stack *stacki; 
 int file_descriptor;
 int *size;
 struct flock lock;

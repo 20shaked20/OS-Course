@@ -22,9 +22,7 @@
 
 #include "stack.hpp"
 
-#define PORT "3490" // the port client will be connecting to 
-
-// get sockaddr, IPv4 or IPv6:
+/* get sockaddr, IPv4 or IPv6: */
 void *get_in_addr(struct sockaddr *sa)
 {
 	if (sa->sa_family == AF_INET) {
@@ -33,6 +31,12 @@ void *get_in_addr(struct sockaddr *sa)
 
 	return &(((struct sockaddr_in6*)sa)->sin6_addr);
 }
+
+/**
+ * @brief this method handles the client requests.
+ * 
+ * @param sockfd 
+ */
 void StackQueries(int sockfd){
 	
 	int can_recv;

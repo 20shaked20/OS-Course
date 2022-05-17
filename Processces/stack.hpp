@@ -15,6 +15,10 @@
 #define MAXSIZE 1024
 #define TRUE 1
 #define FALSE 0
+#define SHARED 10485760 /*10 mb */
+#define PORT "3490"		/*the port users will be connecting to*/
+#define BACKLOG 10		/*how many pending connections queue will hold*/
+
 
 /**
  * @brief this is just a defenition of the struct, the main code resides in the process server.
