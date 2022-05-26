@@ -96,7 +96,7 @@ void StackQueries(int new_fd)
 		fcntl(new_fd, F_SETLKW, &lock);
 
 		/* in case we got Exit, return to main menu and stop recieving from the server, return to normal */
-		if (strncmp("Push", cli_msg, 4) == 0)
+		if (strncmp("PUSH", cli_msg, 4) == 0)
 		{
 
 			memmove(cli_msg, cli_msg + 5, sizeof(cli_msg)); /*removes the Push from the string */
