@@ -1,25 +1,23 @@
 
 # DesignPatterns
-This is a Project represnt multiple design patterns implemented in C and C++. </br>
+This Project is about multiple design patterns implemented in C and C++. </br>
 
 
 ## Introduction :
 
 This project is seprated into 4 parts: </br>
 ### Part A:
-implementing a queue and above that a condition queue using the cond variable </br>
-using the queue we implemented the design pattern ```Active Object``` and demonstarted how it work using a client - server model. </br>
->
+implementing a queue and above that a condition queue using the cond variable. </br>
+using the queue, we implemented the design pattern ```Active Object``` and demonstarted how it works using a client - server model. </br>
+
 ### Part B:
-implemnting a self destructive lock known as guard.</br>
+implementing a self destructive lock to be known as guard.</br>
 
 ### PART C:
-implemneting singleton design pattern. </br>
+implementing singleton design pattern. </br>
 
 ### PART D:
-implementing a reactor while demonstarting it under the poll system call, using a client - server model. </br>
-
-
+implementing a reactor and later demonstarting it under the poll system call, using a client - server model. </br>
 
 ## How To Run:
 
@@ -57,6 +55,7 @@ We're adding a photo to explain in details : </br>
 - > if you wish to run the more clients to test the server, open another terminal and enter: ``./pollclient 127.0.0.1`` </br>
 
 We're adding a photo to explain in details : </br>
+- our demo mainly checks that each client gets his message back to him and only to him.
 * pollclient - pollserver Demo :
 <img width="1330" alt="Screen Shot 2022-06-01 at 13 17 55" src="https://user-images.githubusercontent.com/73894107/171382569-f4d79442-b9c3-4396-ba62-e02affb77bf2.png">
 
@@ -65,8 +64,14 @@ We're adding a photo to explain in details : </br>
 
 ## Reading Material:
 
-- [MMAP](https://man7.org/linux/man-pages/man2/mmap.2.html)
-- [FCNTL](https://man7.org/linux/man-pages/man2/fcntl.2.html)
-- [PROCESSES](https://www.softwaretestinghelp.com/unix-processes/)
+- [condition variable](https://www.educative.io/edpresso/what-are-conditional-variables-in-os)
+- [queue](https://www.journaldev.com/36220/queue-in-c)
+- [active object](https://en.wikipedia.org/wiki/Active_object)
+- [pthread](https://man7.org/linux/man-pages/man7/pthreads.7.html)
+- [lock](https://man7.org/linux/man-pages/man3/pthread_mutex_lock.3p.html)
+- [guard](https://en.wikipedia.org/wiki/Guard_(computer_science))
+- [singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
+- [reactor](https://en.wikipedia.org/wiki/Reactor_pattern)
+- [poll](https://man7.org/linux/man-pages/man2/poll.2.html)
 
 
