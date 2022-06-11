@@ -114,6 +114,7 @@ void main()
     sleep(1);
     myfclose(file1);
     myfclose(file2);
+    myfclose(file3);
 
     sync_fs(); /*must have at finish*/
 
